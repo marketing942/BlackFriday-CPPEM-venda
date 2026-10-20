@@ -367,7 +367,7 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 /* =========================================================
    2 · O CAMINHO
    ========================================================= */
-.caminho { position: relative; height: 420vh; }
+.caminho { position: relative; height: 280vh; }
 .caminho__palco {
   position: sticky; top: 0; height: 100svh; overflow: hidden;
   display: grid; grid-template-columns: minmax(320px, 500px) 1fr; align-items: end; column-gap: clamp(1.5rem, 4vw, 4rem);
@@ -867,7 +867,7 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
   .etapa .cta, .barra-compra .cta { width: auto; }
 
   /* caminho: mapa em cima, cartão embaixo */
-  .caminho { height: 400vh; }
+  .caminho { height: 270vh; }
   .caminho__palco { grid-template-columns: 1fr; align-items: end; padding: var(--topbar) var(--gutter) 1.2rem; }
   .etapa { padding: 1.3rem 1.2rem 1.4rem; }
   .caminho__tela { display: none; }
