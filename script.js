@@ -273,10 +273,13 @@
         gMarcos = $("[data-marcos]", svg), farda = $("[data-farda]", svg),
         sol = $("[data-sol]", svg), viajante = $("[data-viajante]", svg), mira = $("[data-mira]", svg);
     var etapas = $$(".etapa", sec), barra = $("[data-passo-barra]", sec), passoLbl = $("[data-passo-label]", sec);
+    // tela da plataforma: qual ferramenta leva você em cada trecho
+    var tela = $("[data-tela]", sec), telaImgs = $$("[data-tela-img]", sec), telaTit = $("[data-tela-titulo]", sec);
+    var TELAS = { 1: "Plataforma CPPEM · Todos os dispositivos", 2: "Plataforma CPPEM · Missão do dia", 3: "Plataforma CPPEM · Rendimento", 4: "Mentoria semanal · Prof. Everton Mota" };
 
     var F = [0, .17, .36, .54, .72, .86];      // onde cada etapa acontece na rota
     var PARA = F[F.length - 1];
-    var ROTULOS = ["Você", "CPPEM", "Cronograma", "Mentoria", "TAF · Psico"];
+    var ROTULOS = ["Você", "CPPEM", "Missão diária", "Evolução", "Mentoria"];
     var N = etapas.length;
     var L = 0, marcos = [], cam = 0, alvoX = 0, alvoY = 0, escMira = 1;
 
@@ -301,7 +304,7 @@
       svg.setAttribute("viewBox", "0 0 " + W + " " + H);
 
       // faixa da trilha: no alto, deixando a metade de baixo para o cartão
-      var faixaY = H * (estreita ? .3 : .3);
+      var faixaY = H * (estreita ? .3 : .27);
       var amp    = H * (estreita ? .075 : .1);
       var x0     = W * (estreita ? .1 : .08);
       var fardaX = W * (estreita ? .8 : .86);
@@ -396,6 +399,12 @@
           $$("a", el).forEach(function (a) { a.tabIndex = i === k ? 0 : -1; });
         });
         if (passoLbl) passoLbl.textContent = k === N - 1 ? "∞" : dois(k + 1);
+        if (tela) {
+          tela.classList.toggle("is-on", !!TELAS[k]);
+          tela.classList.toggle("is-live", k === 4);
+          if (TELAS[k]) telaTit.textContent = TELAS[k];
+          telaImgs.forEach(function (im) { im.classList.toggle("is-on", +im.dataset.telaImg === k); });
+        }
         if (ultimaEtapa !== -1) track("caminho_etapa", { etapa: k });
         ultimaEtapa = k;
       }
@@ -407,28 +416,6 @@
     window.addEventListener("scroll", agendar, { passive: true });
     window.addEventListener("resize", function () { clearTimeout(redim); redim = setTimeout(montar, 120); });
     montar();
-  })();
-
-  /* =========================================================
-     3 · PLATAFORMA — tela fixa troca conforme o passo em foco
-     ========================================================= */
-  (function story() {
-    var box = $("[data-story]");
-    if (!box || !("IntersectionObserver" in window)) return;
-    var passos = $$("[data-story-passo]", box), imgs = $$("[data-story-img]", box),
-        pontos = $$("[data-story-ponto]", box), titulo = $("[data-story-titulo]", box);
-    var TITULOS = ["Missão da semana", "Metas do dia", "Rendimento operacional", "Assistente com IA"];
-    function ativar(i) {
-      passos.forEach(function (p, j) { p.classList.toggle("is-on", j === i); });
-      imgs.forEach(function (p, j) { p.classList.toggle("is-on", j === i); });
-      pontos.forEach(function (p, j) { p.classList.toggle("is-on", j === i); });
-      if (titulo) titulo.textContent = "Plataforma CPPEM · " + TITULOS[i];
-    }
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) ativar(+e.target.dataset.storyPasso); });
-    }, { rootMargin: "-45% 0px -45% 0px" });
-    passos.forEach(function (p) { io.observe(p); });
-    ativar(0);
   })();
 
   /* =========================================================

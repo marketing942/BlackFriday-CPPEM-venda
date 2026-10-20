@@ -367,10 +367,10 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 /* =========================================================
    2 · O CAMINHO
    ========================================================= */
-.caminho { position: relative; height: 560vh; }
+.caminho { position: relative; height: 420vh; }
 .caminho__palco {
   position: sticky; top: 0; height: 100svh; overflow: hidden;
-  display: grid; grid-template-columns: minmax(320px, 520px) 1fr; align-items: end;
+  display: grid; grid-template-columns: minmax(320px, 500px) 1fr; align-items: end; column-gap: clamp(1.5rem, 4vw, 4rem);
   padding: calc(var(--topbar) + 1rem) clamp(1.5rem, 4vw, 4rem) clamp(1.5rem, 4vh, 3rem);
   background:
     radial-gradient(60% 50% at 80% 20%, rgba(217, 178, 106, .08), transparent 70%),
@@ -453,42 +453,42 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 .etapa p strong { color: var(--gold-hot); }
 .etapa--final { border-left-color: var(--fogo); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .8), 0 0 50px -10px rgba(255, 138, 42, .35); }
 .etapa .cta { margin-top: 1.3rem; }
+.etapa__tela { display: none; }
+
+/* a plataforma como equipamento de cada trecho (desktop) */
+.caminho__tela {
+  position: relative; z-index: 2; justify-self: end; align-self: end;
+  width: min(540px, 100%, calc((100svh - 470px) * 1.35)); margin-bottom: 2.6rem;
+  opacity: 0; transform: translateY(30px); transition: opacity .5s var(--ease), transform .6s var(--freada);
+}
+.caminho__tela.is-on { opacity: 1; transform: none; }
+.caminho__tela-rotulo { margin-bottom: .7rem; display: flex; align-items: center; gap: .6rem; color: var(--gold); font-size: .74rem; }
+.caminho__tela-rotulo::before { content: ""; width: 26px; height: 1px; background: var(--gold); }
+.tela {
+  position: relative; border-radius: 14px; overflow: hidden;
+  background: #0d0c0b; border: 1px solid rgba(217, 178, 106, .4);
+  box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .95), 0 0 60px -25px rgba(217, 178, 106, .45);
+}
+.tela__barra { display: flex; align-items: center; gap: .4rem; padding: .6rem .9rem; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
+.tela__barra i { width: .55rem; height: .55rem; border-radius: 50%; background: rgba(255, 255, 255, .15); }
+.tela__barra i:first-child { background: var(--gold); }
+.tela__barra strong { margin-left: .5rem; font-family: var(--mono); font-weight: 400; font-size: .72rem; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+.tela__live { margin-left: auto; display: none; align-items: center; gap: .4rem; font-style: normal; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: #ff5a3c; }
+.tela__live::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 10px #ff3b30; animation: pisca 1.2s infinite; }
+.caminho__tela.is-live .tela__live { display: inline-flex; }
+.tela__frames { position: relative; aspect-ratio: 16 / 9.4; }
+.tela__frames img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: .8rem;
+  opacity: 0; transform: scale(1.04); filter: blur(6px);
+  transition: opacity .5s var(--ease), transform .7s var(--freada), filter .5s;
+}
+.tela__frames img.tela__foto { object-fit: cover; object-position: 50% 18%; padding: 0; }
+.tela__frames img.is-on { opacity: 1; transform: none; filter: none; }
 
 .caminho__progresso { margin-top: 1.4rem; display: flex; align-items: center; gap: .8rem; font-family: var(--mono); color: var(--gold); letter-spacing: .1em; }
 .caminho__progresso i { flex: 1; height: 2px; background: var(--line-2); position: relative; overflow: hidden; }
 .caminho__progresso b { position: absolute; inset: 0; background: linear-gradient(90deg, var(--gold-deep), var(--gold-hot)); transform-origin: left; transform: scaleX(0); }
 .caminho__progresso .infinito { font-size: 1.4rem; line-height: 1; }
-
-/* =========================================================
-   2b · CONTRASTE
-   ========================================================= */
-.contraste__grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.5rem; align-items: stretch; }
-.contraste__card {
-  position: relative; padding: 2.2rem 2rem 2rem;
-  border-radius: var(--raio); border: 1px solid var(--line-2);
-  background: var(--panel);
-}
-.contraste__selo {
-  display: inline-block; padding: .35rem .9rem; border-radius: 99px;
-  font-size: .75rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase;
-}
-.contraste__card ul { list-style: none; margin-top: 1.4rem; display: grid; gap: .95rem; }
-.contraste__card li { position: relative; padding-left: 2rem; }
-.contraste__card li::before { position: absolute; left: 0; top: .05rem; width: 1.35rem; height: 1.35rem; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 900; }
-.contraste__card--nao { opacity: .8; }
-.contraste__card--nao .contraste__selo { background: rgba(255, 255, 255, .07); color: var(--muted); text-decoration: line-through; text-decoration-color: var(--fogo); text-decoration-thickness: 2px; }
-.contraste__card--nao li { color: var(--muted); }
-.contraste__card--nao li::before { content: "✕"; background: rgba(255, 90, 40, .12); color: #ff7a4a; }
-.contraste__card--sim { border-color: rgba(217, 178, 106, .55); background: linear-gradient(160deg, #1d1810, #0f0d0a 70%); box-shadow: 0 0 60px -20px rgba(217, 178, 106, .45); }
-.contraste__card--sim .contraste__selo { background: linear-gradient(180deg, #f6e1a8, #c49a4e); color: #170f02; }
-.contraste__card--sim li::before { content: "✓"; background: var(--gold); color: #170f02; }
-.contraste__card--sim strong { color: var(--gold-hot); }
-.contraste__vs { align-self: center; font-family: var(--display); font-size: 3rem; color: var(--gold-deep); }
-.contraste__nota {
-  margin: 2.2rem auto 0; max-width: 720px; text-align: center; color: var(--muted);
-  padding: 1.1rem 1.4rem; border: 1px dashed rgba(217, 178, 106, .35); border-radius: 12px;
-}
-.contraste__nota strong { color: var(--gold-hot); }
 
 /* faixa que corre entre seções */
 .faixa {
@@ -501,40 +501,6 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 .faixa span { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
 .faixa b { font-size: 1rem; align-self: center; }
 @keyframes corre { to { transform: translateX(-50%); } }
-
-/* =========================================================
-   3 · PLATAFORMA — story com tela fixa
-   ========================================================= */
-.story { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(2rem, 5vw, 5rem); }
-.story__passo { min-height: 78vh; display: flex; flex-direction: column; justify-content: center; opacity: .3; transition: opacity .5s var(--ease); }
-.story__passo.is-on { opacity: 1; }
-.story__tag { font-family: var(--mono); font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
-.story__passo h3 { margin-top: .7rem; font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 1.05; text-transform: uppercase; }
-.story__passo p { margin-top: 1rem; color: #cfcac2; max-width: 460px; }
-.story__img-mobile { display: none; }
-
-.story__visual { position: sticky; top: calc(var(--topbar) + 12vh); height: 70vh; display: flex; flex-direction: column; justify-content: center; gap: 1.2rem; }
-.story__tela {
-  position: relative; border-radius: 16px; padding: 0 0 0;
-  background: #0d0c0b; border: 1px solid rgba(217, 178, 106, .35);
-  box-shadow: 0 40px 90px -30px rgba(0, 0, 0, .9), 0 0 0 6px rgba(255, 255, 255, .02);
-  overflow: hidden;
-}
-.story__glow { position: absolute; inset: -30%; background: radial-gradient(closest-side, rgba(217, 178, 106, .18), transparent); pointer-events: none; }
-.story__barra { position: relative; display: flex; align-items: center; gap: .4rem; padding: .7rem 1rem; border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
-.story__barra i { width: .6rem; height: .6rem; border-radius: 50%; background: rgba(255, 255, 255, .15); }
-.story__barra i:first-child { background: #d9b26a; }
-.story__barra strong { margin-left: .6rem; font-family: var(--mono); font-weight: 400; font-size: .74rem; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
-.story__frames { position: relative; aspect-ratio: 16 / 9.6; }
-.story__frames img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 1rem;
-  opacity: 0; transform: scale(1.04) translateY(10px); filter: blur(6px);
-  transition: opacity .6s var(--ease), transform .8s var(--freada), filter .6s;
-}
-.story__frames img.is-on { opacity: 1; transform: none; filter: none; }
-.story__pontos { list-style: none; display: flex; justify-content: center; gap: .5rem; }
-.story__pontos li { width: 2rem; height: 3px; border-radius: 3px; background: var(--line-2); transition: background .4s, width .4s; }
-.story__pontos li.is-on { width: 3.4rem; background: var(--gold); }
 
 /* =========================================================
    3b · MENTORIAS
@@ -867,22 +833,14 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 @media (max-width: 1100px) {
   .hero__leao { opacity: .85; }
   .hero__conteudo { margin-right: 0; }
-  .story { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
-  .contraste__grid { grid-template-columns: 1fr; }
-  .contraste__vs { justify-self: center; font-size: 2.2rem; margin: -.6rem 0; }
   .mentor { grid-template-columns: 1fr; }
   .mentor__foto { max-width: 420px; margin: 0 auto; }
   .cofres { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
 
-  /* plataforma: sem tela fixa, cada passo mostra o próprio print */
-  .story { grid-template-columns: 1fr; }
-  .story__visual { display: none; }
-  .story__passo { min-height: 0; opacity: 1; padding: 1.6rem 0; border-bottom: 1px solid var(--line); }
-  .story__img-mobile { display: block; margin-top: 1.2rem; border-radius: 12px; border: 1px solid rgba(217, 178, 106, .3); max-height: 70vh; width: auto; max-width: 100%; }
 }
 
 @media (max-width: 760px) {
@@ -909,9 +867,12 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
   .etapa .cta, .barra-compra .cta { width: auto; }
 
   /* caminho: mapa em cima, cartão embaixo */
-  .caminho { height: 520vh; }
+  .caminho { height: 400vh; }
   .caminho__palco { grid-template-columns: 1fr; align-items: end; padding: var(--topbar) var(--gutter) 1.2rem; }
   .etapa { padding: 1.3rem 1.2rem 1.4rem; }
+  .caminho__tela { display: none; }
+  .etapa__tela { display: block; margin-top: .9rem; width: 100%; height: 118px; object-fit: cover; object-position: top; border-radius: 10px; border: 1px solid rgba(217, 178, 106, .3); }
+  .etapa[data-etapa="4"] .etapa__tela { object-position: 50% 15%; }
   .etapa h3 { font-size: 1.8rem; }
   .etapa p { font-size: .94rem; }
   .marco text, .farda__rotulo { font-size: 11px; }
