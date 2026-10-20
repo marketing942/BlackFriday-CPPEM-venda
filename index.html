@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'?l='+l:'';j.async=true;j.src=
+  'https://sgtm.cppem.com.br/metrics/'+dl;f.parentNode.insertBefore(j,f);})
+  (window,document,'script','dataLayer');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Operação Black · Assinatura Até a Farda | CPPEM</title>
+  <meta name="description" content="A oferta mais brutal do ano para sua aprovação nas carreiras policiais. Assinatura CPPEM com acompanhamento até a farda: de R$ 6.739,40 por R$ 747 à vista ou 12x de R$ 77,94. Só de 04 a 20/11." />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Operação Black CPPEM · Assinatura Até a Farda por R$ 747" />
+  <meta property="og:description" content="Não é vitalício. É acompanhamento do primeiro dia até a sua farda. Mentoria semanal, cronograma individual, TAF, psicotécnico e plataforma com IA." />
+  <meta property="og:image" content="assets/og-ate-a-farda.jpg" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-192.png" />
+  <link rel="preload" as="image" href="assets/hero-leao.webp" media="(min-width: 761px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/hero-leao-560.webp" media="(max-width: 760px)" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://sgtm.cppem.com.br/ns.html?id=GTM-PJ379FLQ"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Atmosfera da página inteira: fumaça atrás do conteúdo, brasas por cima.
+       Os dois só clareiam (screen/lighter) — nunca tampam texto. -->
+  <canvas class="fx-fumaca" id="fumaca" aria-hidden="true"></canvas>
+  <canvas class="fx-brasas" id="brasas" aria-hidden="true"></canvas>
+
+  <!-- ============ BARRA DE CONTAGEM ============ -->
+  <div class="topbar" role="status">
+    <span class="topbar__tag"><i class="pulso" aria-hidden="true"></i>Operação Black</span>
+    <span class="topbar__txt" data-fase-txt>A oferta abre em</span>
+    <span class="topbar__relogio" data-relogio aria-live="off">--d --:--:--</span>
+  </div>
+
+  <main id="conteudo">
+
+    <!-- ============ 1 · HERO ============ -->
+    <section class="hero" id="topo" aria-labelledby="hero-title">
+      <div class="hero__cena" aria-hidden="true">
+        <span class="hero__raio"></span>
+        <div class="hero__leao">
+          <picture>
+            <source media="(max-width: 760px)" srcset="assets/hero-leao-560.webp" width="587" height="570" />
+            <img src="assets/hero-leao.webp" width="1084" height="887" alt="" fetchpriority="high" decoding="async" />
+          </picture>
+          <!-- onda do rugido: nasce na boca do leão (posição em % da imagem) -->
+          <span class="hero__rugido"><i></i><i></i></span>
+          <span class="hero__olho"></span>
+        </div>
+        <div class="hero__fumaca"><i></i><i></i><i></i></div>
+      </div>
+
+      <div class="hero__conteudo">
+        <p class="eyebrow eyebrow--mono hero__anim" style="--d:.5s">
+          <span class="eyebrow__dot" aria-hidden="true"></span>Operação Black · 04 a 20/11
+        </p>
+
+        <h1 class="hero__titulo" id="hero-title" aria-label="Até a Farda">
+          <span class="metal hero__anim" style="--d:.75s" data-text="ATÉ A">ATÉ A</span>
+          <span class="metal metal--xl hero__anim" style="--d:.9s" data-text="FARDA">FARDA</span>
+        </h1>
+        <div class="flare hero__anim" style="--d:1.25s" aria-hidden="true"><i></i></div>
+        <p class="hero__assinatura hero__anim" style="--d:1.35s">Assinatura CPPEM</p>
+
+        <p class="hero__lead hero__anim" style="--d:1.5s">
+          A oferta mais brutal do ano para sua aprovação nas carreiras policiais.
+          Vitalício te deixa estudando pra sempre. <strong>A gente te acompanha até você vestir a <span class="gold">farda</span>.</strong>
+        </p>
+
+        <div class="hero__preco hero__anim" style="--d:1.65s">
+          <span class="hero__de">De <s>R$ 6.739,40</s></span>
+          <span class="hero__por">por <strong>R$ 747</strong></span>
+          <span class="hero__x">ou 12x de R$ 77,94</span>
+        </div>
+
+        <div class="hero__acoes hero__anim" style="--d:1.8s">
+          <a href="#oferta" class="cta" data-checkout data-cta="hero" data-cta-principal>
+            <span class="cta__label">Quero ir até a farda</span>
+            <span class="cta__sub" data-cta-sub>R$ 747 à vista ou 12x de R$ 77,94</span>
+          </a>
+          <ul class="selos-mini" role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6.5v5c0 4.6 3.4 8.6 8 9.5 4.6-.9 8-4.9 8-9.5v-5z"/><path d="M9 12l2 2 4.5-4.5"/></svg>7 dias de garantia</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.9L22 10l-5.5 4.7L18.2 22 12 18.3 5.8 22l1.7-7.3L2 10l7.1-1.1z"/></svg>+14.000 aprovados</li>
+          </ul>
+        </div>
+      </div>
+
+      <a class="hero__desce" href="#caminho">
+        <span>O caminho começa aqui</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ============ 2 · O CAMINHO ============ -->
+    <!-- A trilha se desenha conforme a rolagem. A farda fica no horizonte e
+         NUNCA é alcançada pelo marcador: o último trecho é a oferta. -->
+    <section class="caminho" id="caminho" aria-labelledby="caminho-title">
+      <div class="caminho__palco">
+        <h2 class="sr-only" id="caminho-title">O caminho até a farda</h2>
+
+        <!-- A trilha corre da esquerda para a direita. O "mundo" (rota, marcos e
+             viajante) desliza com a rolagem; a farda fica parada no horizonte,
+             sempre à frente. A geometria é montada no script.js. -->
+        <svg class="caminho__mapa" aria-hidden="true">
+          <defs>
+            <linearGradient id="g-trilha" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8c6a2f" />
+              <stop offset=".55" stop-color="#d9b26a" />
+              <stop offset="1" stop-color="#fff3cf" />
+            </linearGradient>
+            <radialGradient id="g-horizonte">
+              <stop offset="0" stop-color="#fff1c4" stop-opacity=".9" />
+              <stop offset=".25" stop-color="#f0c66e" stop-opacity=".4" />
+              <stop offset="1" stop-color="#d9b26a" stop-opacity="0" />
+            </radialGradient>
+            <filter id="f-brilho" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="b" />
+              <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+            <!-- a rota se dissolve na luz antes da farda (x ajustado no script.js) -->
+            <linearGradient id="g-some" data-some gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#fff" />
+              <stop offset="1" stop-color="#000" />
+            </linearGradient>
+            <mask id="m-horizonte" maskUnits="userSpaceOnUse"><rect data-some-rect x="0" y="0" width="100%" height="100%" fill="url(#g-some)" /></mask>
+          </defs>
+
+          <circle class="caminho__sol" data-sol r="260" fill="url(#g-horizonte)" />
+
+          <g mask="url(#m-horizonte)">
+          <g data-mundo>
+            <path class="caminho__rota" data-rota d="" />
+            <path class="caminho__andado-glow" data-andado-glow d="" />
+            <path class="caminho__andado" data-andado d="" />
+            <path class="caminho__fluxo" data-fluxo d="" />
+            <g data-marcos></g>
+            <g class="viajante" data-viajante>
+              <circle class="viajante__halo" r="26" />
+              <circle class="viajante__voce" r="9" />
+              <g class="viajante__leao" data-leao>
+                <circle r="17" />
+                <image href="assets/leao-cppem.webp" x="-13" y="-14" width="26" height="28" />
+              </g>
+            </g>
+          </g>
+          </g>
+
+          <g class="farda" data-farda>
+            <circle r="74" class="farda__aro" />
+            <g transform="translate(-50 -54)">
+              <path class="farda__camisa" d="M30 6 L50 14 L70 6 L96 18 L100 50 L84 54 L84 108 L16 108 L16 54 L0 50 L4 18 Z" />
+              <path class="farda__det" d="M50 14 L42 30 L50 26 L58 30 Z M50 30 L50 108 M22 64 h18 v14 h-18 z M60 64 h18 v14 h-18 z M8 22 l16 -6 M92 22 l-16 -6" />
+              <path class="farda__distintivo" d="M30 42 l3 -6 3 6 6 1 -4.5 4 1 6 -5.5 -3 -5.5 3 1 -6 -4.5 -4 z" />
+            </g>
+            <text class="farda__rotulo" y="142" text-anchor="middle">A farda</text>
+          </g>
+
+          <!-- reta final: a mira sai do viajante e trava na farda -->
+          <g class="mira" data-mira>
+            <g class="mira__corpo">
+              <circle class="mira__aro" r="92" />
+              <circle class="mira__aro mira__aro--fino" r="62" />
+              <path class="mira__cruz" d="M0 -118 V-74 M0 74 V118 M-118 0 H-74 M74 0 H118" />
+              <path class="mira__cantos" d="M-104 -70 V-104 H-70 M70 -104 H104 V-70 M104 70 V104 H70 M-70 104 H-104 V70" />
+              <circle class="mira__ponto" r="4" />
+            </g>
+            <text class="mira__txt" y="-128" text-anchor="middle">Alvo travado</text>
+          </g>
+        </svg>
+
+        <div class="caminho__painel">
+          <ol class="caminho__etapas" data-etapas role="list">
+            <li class="etapa" data-etapa="0">
+              <span class="etapa__num">Ponto de partida</span>
+              <h3>Você.</h3>
+              <p>Edital na mão, conteúdo demais e nenhuma direção. Sozinho, todo caminho parece mais longo — e é.</p>
+            </li>
+            <li class="etapa" data-etapa="1">
+              <span class="etapa__num">Encontro</span>
+              <h3>Você encontra o <span class="gold">CPPEM</span>.</h3>
+              <p>Aqui você para de caminhar sozinho. Ganha um mapa, um método e um leão andando do seu lado.</p>
+            </li>
+            <li class="etapa" data-etapa="2">
+              <span class="etapa__num">Rotina</span>
+              <h3>Cada dia já vem com missão.</h3>
+              <p>Cronograma montado para a sua rotina, com meta de aula, questões, revisão e simulado. Você só executa.</p>
+            </li>
+            <li class="etapa" data-etapa="3">
+              <span class="etapa__num">Direção</span>
+              <h3>Toda semana, alguém corrige a rota.</h3>
+              <p>Mentoria ao vivo com o Prof. Everton Mota. Travou, desanimou, errou o foco? Na semana seguinte você volta pro trilho.</p>
+            </li>
+            <li class="etapa" data-etapa="4">
+              <span class="etapa__num">Além da objetiva</span>
+              <h3>TAF e psicotécnico também.</h3>
+              <p>Passar na prova não é vestir a farda. Por isso a gente prepara você para as etapas que eliminam quem só estudou teoria.</p>
+            </li>
+            <li class="etapa etapa--final" data-etapa="5">
+              <span class="etapa__num">Destino</span>
+              <h3>Até a <span class="gold">farda</span>.</h3>
+              <p>Vitalício é vender pra sempre — e lucrar com você estudando pra sempre. A gente quer o contrário: <strong>te ver de farda</strong>. O acompanhamento não tem prazo para acabar. Ele acaba quando você chega.</p>
+              <a href="#oferta" class="cta cta--sm" data-checkout data-cta="caminho">
+                <span class="cta__label">Esse último trecho a gente faz junto</span>
+              </a>
+            </li>
+          </ol>
+
+          <div class="caminho__progresso" aria-hidden="true">
+            <span data-passo-label>01</span>
+            <i><b data-passo-barra></b></i>
+            <span class="infinito">∞</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2b · VITALÍCIO × ATÉ A FARDA ============ -->
+    <section class="section contraste" id="contraste" aria-labelledby="contraste-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow">A diferença que ninguém te conta</p>
+          <h2 class="section__title" id="contraste-title">
+            Vitalício é vender pra sempre.<br />
+            <span class="metal-ouro">A gente vende até a farda.</span>
+          </h2>
+        </header>
+
+        <div class="contraste__grid">
+          <article class="contraste__card contraste__card--nao" data-reveal="left">
+            <span class="contraste__selo">Vitalício</span>
+            <ul role="list">
+              <li>Acesso pra sempre — e você sozinho pra sempre</li>
+              <li>Quanto mais tempo você estuda, mais tempo ele vende</li>
+              <li>Ninguém olha seu desempenho nem cobra sua meta</li>
+              <li>Termina na videoaula. TAF e psicotécnico? Problema seu</li>
+            </ul>
+          </article>
+
+          <div class="contraste__vs" aria-hidden="true">×</div>
+
+          <article class="contraste__card contraste__card--sim" data-reveal="right">
+            <span class="contraste__selo">Até a farda</span>
+            <ul role="list">
+              <li>Acompanhamento sem prazo máximo, até a sua aprovação</li>
+              <li>A gente ganha quando você <strong>sai</strong> daqui — aprovado</li>
+              <li>Mentoria semanal, cronograma individual e gráficos de evolução</li>
+              <li>Preparação para objetiva, TAF e psicotécnico</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="contraste__nota" data-reveal>
+          <strong>Precisou parar?</strong> A vida acontece. Não exigimos uso ativo: quando você voltar,
+          seu acompanhamento continua exatamente de onde parou.
+        </p>
+      </div>
+    </section>
+
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa__trilho">
+        <span>Até a farda</span><b>✦</b><span>Sem prazo máximo</span><b>✦</b><span>Mentoria semanal</span><b>✦</b><span>TAF + Psicotécnico</span><b>✦</b><span>+14.000 aprovados</span><b>✦</b>
+        <span>Até a farda</span><b>✦</b><span>Sem prazo máximo</span><b>✦</b><span>Mentoria semanal</span><b>✦</b><span>TAF + Psicotécnico</span><b>✦</b><span>+14.000 aprovados</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ============ 3 · PLATAFORMA ============ -->
+    <section class="section plataforma" id="plataforma" aria-labelledby="plataforma-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow">O que vai com você no caminho</p>
+          <h2 class="section__title" id="plataforma-title">
+            Uma plataforma que <span class="metal-ouro">não te deixa se perder.</span>
+          </h2>
+          <p class="section__lead">Tudo num lugar só: o que estudar hoje, quanto você evoluiu e onde ainda está errando.</p>
+        </header>
+
+        <div class="story" data-story>
+          <div class="story__passos">
+            <article class="story__passo" data-story-passo="0">
+              <span class="story__tag">01 · Cronograma individualizado</span>
+              <h3>Seu cronograma, montado para a <span class="gold">sua</span> rotina.</h3>
+              <p>Trabalha o dia inteiro? Estuda só à noite? O cronograma é desenhado em cima das horas que você realmente tem — e se ajusta quando a rotina muda.</p>
+              <img class="story__img-mobile" src="assets/plataforma/cronograma.webp" width="1400" height="627" loading="lazy" decoding="async" alt="Tela de cronograma da plataforma CPPEM com a missão da semana" />
+            </article>
+            <article class="story__passo" data-story-passo="1">
+              <span class="story__tag">02 · Metas diárias</span>
+              <h3>Acordou, abriu, já sabe a missão do dia.</h3>
+              <p>Metas diárias de aulas, questões, simulados e revisões, com flashcards e mapas mentais para fixar. Videoaulas e PDFs completos no mesmo lugar.</p>
+              <img class="story__img-mobile" src="assets/plataforma/plataformamobile.webp" width="938" height="1600" loading="lazy" decoding="async" alt="Plataforma CPPEM aberta no celular" />
+            </article>
+            <article class="story__passo" data-story-passo="2">
+              <span class="story__tag">03 · Gráficos de evolução</span>
+              <h3>O que não é medido não melhora.</h3>
+              <p>Horas estudadas, acertos e erros, rendimento por matéria e sequência de estudos. Você vê, com número, se está mais perto da farda do que na semana passada.</p>
+              <img class="story__img-mobile" src="assets/plataforma/rendimento.webp" width="1400" height="630" loading="lazy" decoding="async" alt="Painel de rendimento com gráficos de desempenho por matéria" />
+            </article>
+            <article class="story__passo" data-story-passo="3">
+              <span class="story__tag">04 · IA treinada para concursos policiais</span>
+              <h3>Uma IA que estuda com você.</h3>
+              <p>Dúvida às 23h? A plataforma tem uma IA treinada para te ajudar a entender o conteúdo, revisar e resolver questões — no computador, tablet ou celular.</p>
+              <img class="story__img-mobile" src="assets/plataforma/platform-devices-v2.webp" width="1400" height="933" loading="lazy" decoding="async" alt="Plataforma CPPEM no notebook e no celular" />
+            </article>
+          </div>
+
+          <div class="story__visual" aria-hidden="true">
+            <div class="story__tela">
+              <span class="story__glow"></span>
+              <div class="story__barra"><i></i><i></i><i></i><strong data-story-titulo>Plataforma CPPEM · Missão da semana</strong></div>
+              <div class="story__frames">
+                <img class="is-on" data-story-img="0" src="assets/plataforma/cronograma.webp" width="1400" height="627" loading="lazy" decoding="async" alt="" />
+                <img data-story-img="1" src="assets/plataforma/plataformamobile.webp" width="938" height="1600" loading="lazy" decoding="async" alt="" />
+                <img data-story-img="2" src="assets/plataforma/rendimento.webp" width="1400" height="630" loading="lazy" decoding="async" alt="" />
+                <img data-story-img="3" src="assets/plataforma/platform-devices-v2.webp" width="1400" height="933" loading="lazy" decoding="async" alt="" />
+              </div>
+            </div>
+            <ol class="story__pontos" role="list">
+              <li data-story-ponto="0" class="is-on"></li><li data-story-ponto="1"></li><li data-story-ponto="2"></li><li data-story-ponto="3"></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3b · MENTORIAS ============ -->
+    <section class="section mentorias" id="mentorias" aria-labelledby="mentorias-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow">Gente de verdade do seu lado</p>
+          <h2 class="section__title" id="mentorias-title">
+            Plataforma organiza.<br /><span class="metal-ouro">Mentor aprova.</span>
+          </h2>
+        </header>
+
+        <div class="mentor" data-reveal>
+          <figure class="mentor__foto">
+            <img src="assets/everton-mota.webp" width="900" height="1085" loading="lazy" decoding="async" alt="Prof. Everton Mota" />
+            <figcaption><span class="mono">Ao vivo · toda semana</span>Prof. Everton Mota</figcaption>
+          </figure>
+          <div class="mentor__txt">
+            <h3>Mentorias ao vivo semanais com o <span class="gold">Prof. Everton Mota</span></h3>
+            <p>Toda semana, ao vivo, quem já levou milhares de alunos à farda olha para o seu momento: o que priorizar, como reorganizar a semana, como não desistir na hora que pesa.</p>
+            <div class="mdt">
+              <p class="mdt__titulo">Método <strong>MDT</strong> · incluso</p>
+              <ol role="list">
+                <li><b>M</b><span>Mentalidade</span><small>Constância quando a motivação acaba.</small></li>
+                <li><b>D</b><span>Disciplina</span><small>Rotina que cabe na vida real.</small></li>
+                <li><b>T</b><span>Técnica</span><small>Estudar o que cai, do jeito que cai.</small></li>
+              </ol>
+            </div>
+            <ul class="mentor__inclui" role="list">
+              <li>Mentoria para TAF</li>
+              <li>Mentoria para Psicotécnico</li>
+              <li>Grupo exclusivo com mentores</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="extras" data-reveal>
+          <p class="extras__titulo">Extras digitais inclusos</p>
+          <ul role="list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M14 4v5h5"/></svg>Apostila Digital</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v15H4zM13 5h7v15h-7z"/></svg>Vade Mecum Digital</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z"/><path d="M9 9l1.5 1.5L13 8M9 14l1.5 1.5L13 13"/></svg>Caderno de Questões Digital</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4 · BÔNUS ============ -->
+    <!-- Para marcar um bônus como esgotado: troque data-bonus="aberto" por
+         data-bonus="esgotado". Para revelar: troque o texto do .cofre__premio. -->
+    <section class="section bonus" id="bonus" aria-labelledby="bonus-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow eyebrow--mono">Ordem de chegada</p>
+          <h2 class="section__title" id="bonus-title">
+            Quem chega primeiro<br /><span class="metal-ouro">leva mais.</span>
+          </h2>
+          <p class="section__lead">Bônus extras liberados por ordem de compra confirmada. Quando acabam, acabam.</p>
+        </header>
+
+        <div class="cofres">
+          <article class="cofre cofre--1" data-bonus="aberto" data-reveal="zoom">
+            <span class="cofre__carimbo" aria-hidden="true">Esgotado</span>
+            <span class="cofre__pos"><b>1º</b> aluno</span>
+            <div class="cofre__porta" aria-hidden="true"><i></i></div>
+            <h3 class="cofre__premio">Bônus lacrado</h3>
+            <p class="cofre__desc">Revelado na live de 04/11. Só para o primeiro a garantir a assinatura.</p>
+            <p class="cofre__status" data-bonus-status></p>
+          </article>
+          <article class="cofre cofre--10" data-bonus="aberto" data-reveal="zoom">
+            <span class="cofre__carimbo" aria-hidden="true">Esgotado</span>
+            <span class="cofre__pos"><b>10</b> primeiros</span>
+            <div class="cofre__porta" aria-hidden="true"><i></i></div>
+            <h3 class="cofre__premio">Bônus lacrado</h3>
+            <p class="cofre__desc">Revelado na live de 04/11. Para os 10 primeiros alunos da Operação Black.</p>
+            <p class="cofre__status" data-bonus-status></p>
+          </article>
+          <article class="cofre cofre--30" data-bonus="aberto" data-reveal="zoom">
+            <span class="cofre__carimbo" aria-hidden="true">Esgotado</span>
+            <span class="cofre__pos"><b>30</b> primeiros</span>
+            <div class="cofre__porta" aria-hidden="true"><i></i></div>
+            <h3 class="cofre__premio">Bônus lacrado</h3>
+            <p class="cofre__desc">Revelado na live de 04/11. Para os 30 primeiros alunos da Operação Black.</p>
+            <p class="cofre__status" data-bonus-status></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5 · OFERTA ============ -->
+    <section class="section oferta" id="oferta" aria-labelledby="oferta-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow eyebrow--mono">Ficha da operação</p>
+          <h2 class="section__title" id="oferta-title">
+            Tudo isso vale <span class="riscado">R$ 6.739,40</span>.<br />
+            <span class="metal-ouro">Na Operação Black, não.</span>
+          </h2>
+        </header>
+
+        <div class="ficha" data-reveal>
+          <div class="ficha__topo">
+            <img src="assets/logo-cppem-prata.webp" width="600" height="200" loading="lazy" decoding="async" alt="CPPEM" />
+            <span class="mono">Assinatura · Até a Farda</span>
+          </div>
+
+          <ol class="ficha__itens" role="list" data-ficha>
+            <li><span>Mentorias ao vivo semanais com o Prof. Everton Mota</span><s>R$ 1.997,00</s></li>
+            <li><span>Cronograma individualizado conforme sua rotina de estudos</span><s>R$ 358,80</s></li>
+            <li><span>Videoaulas e PDFs completos</span><s>R$ 797,00</s></li>
+            <li><span>Metas diárias de aulas, questões, simulados e revisões; flashcards e mapas mentais</span><s>R$ 497,00</s></li>
+            <li><span>Gráficos de evolução do seu desempenho</span><s>R$ 358,80</s></li>
+            <li><span>Grupo exclusivo com mentores, equipe pedagógica e alunos</span><em>Incluso</em></li>
+            <li><span>Mentoria para TAF</span><s>R$ 497,00</s></li>
+            <li><span>Mentoria para Psicotécnico</span><s>R$ 598,80</s></li>
+            <li><span>Plataforma com IA treinada para auxiliar seus estudos</span><s>R$ 997,00</s></li>
+            <li class="extra"><span><b>Extra</b> Método MDT do Prof. Everton (Mentalidade, Disciplina e Técnica)</span><s>R$ 497,00</s></li>
+            <li class="extra"><span><b>Extra</b> Apostila Digital</span><s>R$ 57,00</s></li>
+            <li class="extra"><span><b>Extra</b> Vade Mecum Digital</span><s>R$ 47,00</s></li>
+            <li class="extra"><span><b>Extra</b> Caderno de Questões Digital</span><s>R$ 37,00</s></li>
+          </ol>
+
+          <div class="ficha__total">
+            <span>Valor total</span>
+            <s>R$ 6.739,40</s>
+          </div>
+
+          <div class="preco" data-reveal="zoom">
+            <span class="preco__carimbo" aria-hidden="true">-89%</span>
+            <p class="preco__rotulo">Na Operação Black, até a farda por</p>
+            <p class="preco__parcela"><span class="preco__x">12x de</span><span class="preco__rs">R$</span><strong>77,94</strong><sup>*</sup></p>
+            <p class="preco__vista">ou <strong>R$ 747</strong> à vista</p>
+            <p class="preco__dia">Num ano de estudo, dá menos de <strong>R$ 2,05 por dia</strong> — e você não paga de novo até ser aprovado.</p>
+
+            <a href="#oferta" class="cta cta--xl" data-checkout data-cta="oferta">
+              <span class="cta__label">Garantir minha assinatura</span>
+              <span class="cta__sub" data-cta-sub>Pagamento seguro · acesso após a confirmação</span>
+            </a>
+            <div class="fogo" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <p class="ficha__nota">* Parcelado no cartão de crédito, com acréscimo: 12x de R$ 77,94 (total de R$ 935,28). À vista, R$ 747.</p>
+        </div>
+
+        <div class="garantia" data-reveal>
+          <svg class="garantia__selo" viewBox="0 0 200 200" role="img" aria-label="Selo de garantia de 7 dias">
+            <defs>
+              <linearGradient id="g-selo" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fff0c2" /><stop offset=".45" stop-color="#d9b26a" /><stop offset="1" stop-color="#7d5c25" />
+              </linearGradient>
+              <path id="p-selo" d="M100 100 m-72 0 a72 72 0 1 1 144 0 a72 72 0 1 1 -144 0" />
+            </defs>
+            <g class="garantia__giro">
+              <path fill="url(#g-selo)" d="M100.0 3.0 L111.6 11.8 L125.1 6.3 L134.1 17.8 L148.5 16.0 L154.2 29.4 L168.6 31.4 L170.6 45.8 L184.0 51.5 L182.2 65.9 L193.7 74.9 L188.2 88.4 L197.0 100.0 L188.2 111.6 L193.7 125.1 L182.2 134.1 L184.0 148.5 L170.6 154.2 L168.6 168.6 L154.2 170.6 L148.5 184.0 L134.1 182.2 L125.1 193.7 L111.6 188.2 L100.0 197.0 L88.4 188.2 L74.9 193.7 L65.9 182.2 L51.5 184.0 L45.8 170.6 L31.4 168.6 L29.4 154.2 L16.0 148.5 L17.8 134.1 L6.3 125.1 L11.8 111.6 L3.0 100.0 L11.8 88.4 L6.3 74.9 L17.8 65.9 L16.0 51.5 L29.4 45.8 L31.4 31.4 L45.8 29.4 L51.5 16.0 L65.9 17.8 L74.9 6.3 L88.4 11.8Z" />
+            </g>
+            <circle cx="100" cy="100" r="80" fill="#0b0a09" stroke="url(#g-selo)" stroke-width="3" />
+            <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(217,178,106,.35)" stroke-width="1" />
+            <text class="garantia__arco"><textPath href="#p-selo" startOffset="0" textLength="446" lengthAdjust="spacing">GARANTIA DE 7 DIAS · RISCO ZERO · GARANTIA DE 7 DIAS · RISCO ZERO ·</textPath></text>
+            <text x="100" y="108" text-anchor="middle" class="garantia__num">7</text>
+            <text x="100" y="132" text-anchor="middle" class="garantia__dias">DIAS</text>
+          </svg>
+          <div class="garantia__txt">
+            <h3>7 dias para conhecer tudo. <span class="gold">O risco é nosso.</span></h3>
+            <p>Entre, assista às aulas, abra a plataforma, participe da mentoria. Se em até 7 dias você achar que não é para você, peça o reembolso e devolvemos 100% do valor. Sem pergunta e sem burocracia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6 · PROVA SOCIAL ============ -->
+    <section class="section prova" id="prova" aria-labelledby="prova-title">
+      <div class="container">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow">Quem já chegou</p>
+          <h2 class="section__title" id="prova-title">
+            Eles fizeram o caminho.<br /><span class="metal-ouro">Hoje vestem a farda.</span>
+          </h2>
+        </header>
+
+        <div class="stats">
+          <div class="stat" data-reveal><strong data-conta="14000" data-prefixo="+">+14.000</strong><span>alunos aprovados</span></div>
+          <div class="stat" data-reveal><strong data-conta="7">7</strong><span>anos de CPPEM</span></div>
+          <div class="stat" data-reveal><strong>∞</strong><span>até a sua farda</span></div>
+        </div>
+      </div>
+
+      <div class="mural" aria-label="Alunos aprovados do CPPEM">
+        <ul class="mural__faixa" role="list">
+          <li><img src="assets/aprovados/foto2.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Aluno aprovado do CPPEM de farda ao lado do Prof. Everton" /></li>
+          <li><img src="assets/aprovados/foto4.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Policial militar formado, aluno do CPPEM" /></li>
+          <li><img src="assets/aprovados/foto3.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Aluna aprovada de farda comemorando com o Prof. Everton" /></li>
+          <li><img src="assets/aprovados/foto12.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Policial formado segurando o filho no colo" /></li>
+          <li><img src="assets/aprovados/foto9.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Abraço de comemoração na formatura" /></li>
+          <li><img src="assets/aprovados/foto14.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Policial militar formado em pose de farda" /></li>
+          <li><img src="assets/aprovados/foto13.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Abraço emocionado entre policial formado e familiar" /></li>
+          <li><img src="assets/aprovados/foto7.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Prof. Everton ajustando a farda de um aluno aprovado" /></li>
+          <li><img src="assets/aprovados/foto11.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Alunos aprovados do CPPEM com o Prof. Everton" /></li>
+          <li><img src="assets/aprovados/foto5.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Família reunida na formatura de um aluno aprovado" /></li>
+        </ul>
+      </div>
+
+      <div class="bilhetes" aria-label="Comentários de alunos">
+        <ul class="bilhetes__faixa" role="list" data-duplicar>
+          <li class="bilhete bilhete--a bilhete--ouro" style="--r:-0.3deg;--y:1px;--w:780"><span class="bilhete__papel"><img src="assets/prova/prova-01.webp" width="780" height="72" loading="lazy" decoding="async" alt="@parabellum6568: Que aula da porra! Aula objetiva e na linguagem que o concurseiro entende, quero passar no concurso e não ser escritor! Parabéns, Everton." /></span></li>
+          <li class="bilhete bilhete--b bilhete--prata" style="--r:2.2deg;--y:-1px;--w:430"><span class="bilhete__papel"><img src="assets/prova/prova-07.webp" width="685" height="128" loading="lazy" decoding="async" alt="Esse vídeo me ajudou muito para a prova da PC-PB. Gratidão!" /></span></li>
+          <li class="bilhete bilhete--c bilhete--ouro" style="--r:0.1deg;--y:2px;--w:575"><span class="bilhete__papel"><img src="assets/prova/prova-04.webp" width="575" height="81" loading="lazy" decoding="async" alt="@jhenniferbenigno4462: Tenho o material online e é topadoooo." /></span></li>
+          <li class="bilhete bilhete--a bilhete--prata" style="--r:-2deg;--y:0px;--w:433"><span class="bilhete__papel"><img src="assets/prova/prova-02.webp" width="433" height="79" loading="lazy" decoding="async" alt="@rafaelcampos6151: Melhor aula de redação para concurso!!!" /></span></li>
+          <li class="bilhete bilhete--b bilhete--ouro" style="--r:1.4deg;--y:4px;--w:500"><span class="bilhete__papel"><img src="assets/prova/prova-05.webp" width="373" height="54" loading="lazy" decoding="async" alt="@jorgerodrigues: rumo ao T1 com o professor Mota!" /></span></li>
+          <li class="bilhete bilhete--c bilhete--prata" style="--r:-1deg;--y:-3px;--w:560"><span class="bilhete__papel"><img src="assets/prova/prova-08.webp" width="971" height="150" loading="lazy" decoding="async" alt="@gomes_mell: Nunca me identifiquei tanto com a aula do tio Mota, que maravilha de informações." /></span></li>
+          <li class="bilhete bilhete--a bilhete--ouro" style="--r:.8deg;--y:5px;--w:413"><span class="bilhete__papel"><img src="assets/prova/prova-09.webp" width="740" height="150" loading="lazy" decoding="async" alt="@willianoliveira7198: O cara tira onda, parabéns pela aula." /></span></li>
+          <li class="bilhete bilhete--b bilhete--prata" style="--r:-1.6deg;--y:-2px;--w:520"><span class="bilhete__papel"><img src="assets/prova/prova-03.webp" width="433" height="85" loading="lazy" decoding="async" alt="@lucaseduardo3791: Excelente aula, muito obrigado." /></span></li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="prova__cta" data-reveal>
+          <p>A próxima foto de farda pode ser a sua.</p>
+          <a href="#oferta" class="cta" data-checkout data-cta="prova">
+            <span class="cta__label">Começar meu caminho até a farda</span>
+            <span class="cta__sub" data-cta-sub>R$ 747 à vista ou 12x de R$ 77,94</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6.5 · FAQ ============ -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container container--estreito">
+        <header class="sec-head" data-reveal>
+          <p class="eyebrow">Antes de entrar</p>
+          <h2 class="section__title" id="faq-title">Perguntas <span class="metal-ouro">diretas.</span></h2>
+        </header>
+
+        <div class="faq__lista">
+          <details data-reveal>
+            <summary>O que significa “até a farda”?</summary>
+            <p>Que o seu acompanhamento não tem data para acabar: ele continua até você ser aprovado em um concurso de carreira policial. Não é vitalício porque o objetivo não é você estudar a vida toda — é você chegar.</p>
+          </details>
+          <details data-reveal>
+            <summary>Tem prazo máximo ou mensalidade?</summary>
+            <p>Não. Você paga uma vez (à vista ou em até 12x no cartão) e o acompanhamento segue até a sua aprovação, sem renovação e sem prazo máximo.</p>
+          </details>
+          <details data-reveal>
+            <summary>E se eu precisar parar de estudar por um tempo?</summary>
+            <p>A vida acontece. Não exigimos uso ativo: se você precisar parar, quando voltar seu acompanhamento continua de onde parou.</p>
+          </details>
+          <details data-reveal>
+            <summary>Serve para qual concurso?</summary>
+            <p>Para as carreiras policiais. O cronograma e as metas são montados em cima do seu objetivo e da sua rotina, e a equipe ajusta a rota quando sai um edital novo.</p>
+          </details>
+          <details data-reveal>
+            <summary>Como funcionam os bônus dos primeiros?</summary>
+            <p>Valem pela ordem de compra confirmada: o 1º aluno, os 10 primeiros e os 30 primeiros da Operação Black. Quando um bônus esgota, ele aparece marcado como esgotado nesta página.</p>
+          </details>
+          <details data-reveal>
+            <summary>Como funciona a garantia de 7 dias?</summary>
+            <p>Você tem 7 dias, a partir da compra, para conhecer tudo. Se não for o que esperava, é só pedir o reembolso dentro desse prazo e devolvemos 100% do valor pago.</p>
+          </details>
+          <details data-reveal>
+            <summary>Quais as formas de pagamento?</summary>
+            <p>R$ 747 à vista ou em até 12x de R$ 77,94 no cartão de crédito (total parcelado de R$ 935,28). O acesso é liberado após a confirmação do pagamento.</p>
+          </details>
+          <details data-reveal>
+            <summary>Até quando vale a Operação Black?</summary>
+            <p>A oferta abre em 04/11 e encerra em <strong>20/11, às 23h59</strong>. Depois disso, a Assinatura Até a Farda sai deste preço.</p>
+          </details>
+        </div>
+
+        <p class="faq__ajuda" data-reveal>Ficou alguma dúvida? <a href="https://wa.me/558173105354" target="_blank" rel="noopener">Fale com a equipe no WhatsApp</a>.</p>
+      </div>
+    </section>
+
+    <!-- ============ FECHO ============ -->
+    <section class="fecho" aria-labelledby="fecho-title">
+      <img class="fecho__leao" src="assets/leao-cppem.webp" width="586" height="640" loading="lazy" decoding="async" alt="" aria-hidden="true" />
+      <div class="container">
+        <h2 class="fecho__titulo" id="fecho-title" data-reveal>
+          O caminho é longo.<br /><span class="metal-ouro">Ninguém precisa andar sozinho.</span>
+        </h2>
+        <a href="#oferta" class="cta cta--xl" data-checkout data-cta="fecho" data-reveal>
+          <span class="cta__label">Quero ir até a farda</span>
+          <span class="cta__sub" data-cta-sub>R$ 747 à vista ou 12x de R$ 77,94 · 7 dias de garantia</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 7 · FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__marca">
+        <img src="assets/logo-cppem-prata.webp" width="600" height="200" loading="lazy" decoding="async" alt="CPPEM Concursos" />
+        <p>&ldquo;Seu sonho é o nosso principal objetivo.&rdquo;</p>
+        <div class="footer__social">
+          <a href="https://wa.me/558173105354" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1s-.5-.1-.7.2-.8 1-.9 1.1-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5L9 6.9c-.2-.5-.4-.4-.5-.4h-.6a1.1 1.1 0 0 0-.8.4A3.4 3.4 0 0 0 6 9.3c0 1.5 1.1 3 1.3 3.2a12 12 0 0 0 4.6 4c.6.3 1.1.5 1.5.6.7.2 1.3.2 1.7.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.1-1.4zM12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2z"/></svg></a>
+          <a href="https://www.instagram.com/cppemconcursos/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3"/></svg></a>
+          <a href="https://www.youtube.com/@cppemconcursos" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 3.9 12 3.9 12 3.9s-7.5 0-9.4.5A3 3 0 0 0 .5 6.5C0 8.4 0 12 0 12s0 3.6.5 5.5a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.5.5-5.5s0-3.6-.5-5.5zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+          <a href="https://www.tiktok.com/@cppemconcursos" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3.3v13.2a2.4 2.4 0 1 1-2.4-2.4c.2 0 .5 0 .7.1v-3.3a5.7 5.7 0 1 0 5 5.7V9.7a7.6 7.6 0 0 0 4.4 1.4V7.8a4.3 4.3 0 0 1-3.4-2z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>A oferta</h4>
+        <p>Assinatura Até a Farda</p>
+        <p>R$ 747 à vista ou 12x de R$ 77,94</p>
+        <p>De 04/11 até 20/11, 23h59</p>
+        <p>Garantia de 7 dias</p>
+      </div>
+
+      <nav class="footer__col" aria-label="CPPEM">
+        <h4>CPPEM</h4>
+        <a href="https://cppem.com.br/turmas" target="_blank" rel="noopener">Turmas presenciais</a>
+        <a href="https://loja.cppem.com.br" target="_blank" rel="noopener">Loja de materiais</a>
+        <a href="https://cppem.com.br/quem-somos" target="_blank" rel="noopener">Quem somos</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Ajuda">
+        <h4>Ajuda</h4>
+        <a href="https://wa.me/558173105354" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a href="https://cppem.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+      </nav>
+    </div>
+
+    <div class="container footer__barra">
+      <span>© 2026 <strong>Cppem Colégio e Cursos LTDA.</strong> · Caruaru, Pernambuco</span>
+      <span>CNPJ 57.347.872/0001-48</span>
+    </div>
+
+    <p class="container footer__legal">
+      A Assinatura Até a Farda é um serviço particular de preparação para concursos, produzido pela CPPEM Concursos,
+      sem vínculo, patrocínio ou endosso de qualquer corporação policial, governo ou banca organizadora. A aprovação
+      depende do desempenho individual do candidato. * Valor parcelado no cartão de crédito com acréscimo; à vista, R$ 747.
+    </p>
+  </footer>
+
+  <!-- barra fixa de compra (celular, depois do hero) -->
+  <div class="barra-compra" data-barra-compra aria-hidden="true">
+    <div class="barra-compra__preco">
+      <span>Até a farda</span>
+      <strong>12x R$ 77,94</strong>
+    </div>
+    <a href="#oferta" class="cta cta--sm" data-checkout data-cta="barra_fixa" tabindex="-1">
+      <span class="cta__label">Garantir</span>
+    </a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
