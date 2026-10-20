@@ -165,6 +165,7 @@
       }
       if (indo) return;
       indo = true;
+      document.documentElement.setAttribute("data-indo-checkout", "1"); // exit-popup.js não interrompe
       var destino = checkoutURL();
       track("iniciar_checkout", { valor: CONFIG.valor, moeda: "BRL", produto: "assinatura_ate_a_farda", cta: btn.dataset.cta || "desconhecido" });
       var l = $(".cta__label", btn);
@@ -172,6 +173,7 @@
       setTimeout(function () { location.href = destino; }, REDIRECT_DELAY_MS);
       setTimeout(function () { // rede lenta não pode deixar o botão morto
         indo = false;
+        document.documentElement.removeAttribute("data-indo-checkout");
         if (l) l.textContent = btn.dataset.labelOrig;
       }, REDIRECT_DELAY_MS + 6000);
     });
@@ -304,8 +306,8 @@
       svg.setAttribute("viewBox", "0 0 " + W + " " + H);
 
       // faixa da trilha: no alto, deixando a metade de baixo para o cartão
-      var faixaY = H * (estreita ? .3 : .27);
-      var amp    = H * (estreita ? .075 : .1);
+      var faixaY = H * (estreita ? .17 : .27);
+      var amp    = H * (estreita ? .055 : .1);
       var x0     = W * (estreita ? .1 : .08);
       var fardaX = W * (estreita ? .8 : .86);
       var mundoW = W * (estreita ? 3.4 : 3);
@@ -327,7 +329,7 @@
       for (var k = 0; k <= 30; k++) { var q = ponto(PARA + (1 - PARA) * k / 30); fl.push(q.x.toFixed(1) + " " + q.y.toFixed(1)); }
       fluxo.setAttribute("d", "M" + fl.join(" L"));
 
-      var esc = estreita ? .55 : .9;
+      var esc = estreita ? .46 : .9;
       alvoX = fardaX; alvoY = faixaY; escMira = esc;
       farda.setAttribute("transform", "translate(" + fardaX + " " + faixaY + ") scale(" + esc + ")");
       sol.setAttribute("cx", fardaX); sol.setAttribute("cy", faixaY);

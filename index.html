@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="exit-popup.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -40,7 +41,7 @@
 
   <!-- ============ BARRA DE CONTAGEM ============ -->
   <div class="topbar" role="status">
-    <span class="topbar__tag"><i class="pulso" aria-hidden="true"></i>Operação Black</span>
+    <span class="topbar__tag"><i class="pulso" aria-hidden="true"></i>Oferta exclusiva</span>
     <span class="topbar__txt" data-fase-txt>A oferta abre em</span>
     <span class="topbar__relogio" data-relogio aria-live="off">--d --:--:--</span>
   </div>
@@ -80,16 +81,9 @@
           Vitalício te deixa estudando pra sempre. <strong>A gente te acompanha até você vestir a <span class="gold">farda</span>.</strong>
         </p>
 
-        <div class="hero__preco hero__anim" style="--d:1.65s">
-          <span class="hero__de">De <s>R$ 6.739,40</s></span>
-          <span class="hero__por">por <strong>R$ 747</strong></span>
-          <span class="hero__x">ou 12x de R$ 77,94</span>
-        </div>
-
         <div class="hero__acoes hero__anim" style="--d:1.8s">
           <a href="#oferta" class="cta" data-checkout data-cta="hero" data-cta-principal>
             <span class="cta__label">Quero ir até a farda</span>
-            <span class="cta__sub" data-cta-sub>R$ 747 à vista ou 12x de R$ 77,94</span>
           </a>
           <ul class="selos-mini" role="list">
             <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6.5v5c0 4.6 3.4 8.6 8 9.5 4.6-.9 8-4.9 8-9.5v-5z"/><path d="M9 12l2 2 4.5-4.5"/></svg>7 dias de garantia</li>
@@ -312,12 +306,12 @@
         </header>
 
         <div class="cofres">
-          <article class="cofre cofre--1" data-bonus="aberto" data-reveal="zoom">
+          <article class="cofre cofre--1 cofre--revelado" data-bonus="aberto" data-reveal="zoom">
             <span class="cofre__carimbo" aria-hidden="true">Esgotado</span>
             <span class="cofre__pos"><b>1º</b> aluno</span>
             <div class="cofre__porta" aria-hidden="true"><i></i></div>
-            <h3 class="cofre__premio">Bônus lacrado</h3>
-            <p class="cofre__desc">Revelado na live de 04/11. Só para o primeiro a garantir a assinatura.</p>
+            <h3 class="cofre__premio">Encontro <span class="cofre__live">ao vivo</span> individual com o Prof. Everton Mota</h3>
+            <p class="cofre__desc">Uma conversa só sua com o Everton para montar a estratégia até a farda. Só para o primeiro a garantir a assinatura.</p>
             <p class="cofre__status" data-bonus-status></p>
           </article>
           <article class="cofre cofre--10" data-bonus="aberto" data-reveal="zoom">
@@ -379,15 +373,15 @@
           </div>
 
           <div class="preco" data-reveal="zoom">
-            <span class="preco__carimbo" aria-hidden="true">-89%</span>
+            <span class="preco__selo" aria-label="89% de desconto"><b>-89%</b><small>off</small></span>
             <p class="preco__rotulo">Na Operação Black, até a farda por</p>
-            <p class="preco__parcela"><span class="preco__x">12x de</span><span class="preco__rs">R$</span><strong>77,94</strong><sup>*</sup></p>
+            <p class="preco__x">12x de</p>
+            <p class="preco__parcela"><strong><span class="preco__rs">R$</span>77,94<sup>*</sup></strong></p>
             <p class="preco__vista">ou <strong>R$ 747</strong> à vista</p>
             <p class="preco__dia">Num ano de estudo, dá menos de <strong>R$ 2,05 por dia</strong> — e você não paga de novo até ser aprovado.</p>
 
-            <a href="#oferta" class="cta cta--xl" data-checkout data-cta="oferta">
-              <span class="cta__label">Garantir minha assinatura</span>
-              <span class="cta__sub" data-cta-sub>Pagamento seguro · acesso após a confirmação</span>
+            <a href="#oferta" class="cta" data-checkout data-cta="oferta">
+              <span class="cta__label">Garantir assinatura</span>
             </a>
             <div class="fogo" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
           </div>
@@ -597,6 +591,56 @@
     </a>
   </div>
 
+  <!-- ===================== EXIT POPUP =====================
+       Kit portátil (mesmo do comboPCPE2). Pega quem vai sair com dúvida:
+       grava o contato na planilha (aba OPERACAO_BLACK_DUVIDAS) e leva a
+       pessoa ao WhatsApp da equipe. Não é Lead de venda:
+       stopSubmitPropagation fica ligado no exit-popup.js. -->
+  <div class="xp" id="xp-modal" hidden>
+    <div class="xp__overlay" data-xp-close></div>
+    <div class="xp__box" role="dialog" aria-modal="true" aria-labelledby="xp-title">
+      <button type="button" class="xp__close" data-xp-close aria-label="Fechar">&times;</button>
+
+      <span class="xp__eyebrow">Espera, antes de sair</span>
+      <h2 class="xp__title" id="xp-title">Ficou alguma <span>dúvida</span> sobre o Até a Farda?</h2>
+      <p class="xp__sub">Deixa seu contato que a equipe do CPPEM te responde no WhatsApp agora:</p>
+
+      <ul class="xp__benefits">
+        <li>Como funciona o acompanhamento sem prazo até a aprovação</li>
+        <li>Se serve para o concurso que você está mirando</li>
+        <li>Formas de pagamento e a garantia de 7 dias</li>
+      </ul>
+
+      <form class="xp__form" novalidate>
+        <div class="xp__field">
+          <input type="text" name="nome" data-xp-rule="text" data-xp-msg="Informe seu nome completo."
+                 placeholder="Nome completo" autocomplete="name" required />
+          <span class="xp__error"></span>
+        </div>
+        <div class="xp__field">
+          <input type="email" name="email" data-xp-rule="email"
+                 placeholder="E-mail" autocomplete="email" required />
+          <span class="xp__error"></span>
+        </div>
+        <div class="xp__field">
+          <input type="text" name="telefone" data-xp-rule="phone" inputmode="tel"
+                 placeholder="Seu WhatsApp (com DDD)" autocomplete="tel" required />
+          <span class="xp__error"></span>
+        </div>
+
+        <button type="submit" class="xp__cta">Tirar minha dúvida no WhatsApp</button>
+
+        <p class="xp__note">Resposta da equipe pedagógica • Seus dados estão seguros.</p>
+        <p class="xp__success" role="status" hidden>✅ Recebido! Abrindo o WhatsApp...</p>
+      </form>
+
+      <button type="button" class="xp__decline" data-xp-close data-xp-decline>
+        Não tenho dúvida, quero garantir minha vaga
+      </button>
+    </div>
+  </div>
+
   <script src="script.js" defer></script>
+  <script src="exit-popup.js" defer></script>
 </body>
 </html>
