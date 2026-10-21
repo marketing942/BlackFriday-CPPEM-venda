@@ -6,8 +6,9 @@ Página de venda da Black Friday da CPPEM, com checkout direto em
 
 | | |
 |---|---|
-| **Oferta** | de ~~R$ 6.739,40~~ por **R$ 747 à vista** ou **12x de R$ 77,94** (total parcelado R$ 935,28) |
+| **Oferta** | de ~~R$ 6.739,40~~ por **R$ 797 à vista** ou **12x de R$ 83,15** (total parcelado R$ 997,80) |
 | **Janela** | botões ativos até 20/11, 23h59 (horário de Brasília) |
+| **Prazos** | acesso à plataforma até a aprovação; mentoria ao vivo semanal por 1 ano |
 | **Garantia** | 7 dias |
 
 Estática, sem build: `index.html` + `styles.css` + `script.js` + `assets/`.
@@ -44,7 +45,7 @@ Estática, sem build: `index.html` + `styles.css` + `script.js` + `assets/`.
 
 ## Medição
 
-Eventos no dataLayer: `iniciar_checkout` (valor 747), `cta_travado`, `caminho_etapa`.
+Eventos no dataLayer: `iniciar_checkout` (valor 797), `cta_travado`, `caminho_etapa`.
 A conversão de compra é registrada pelo checkout. GTM: `sgtm.cppem.com.br` / `GTM-PJ379FLQ`.
 
 ## Deploy na Vercel

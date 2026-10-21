@@ -13,7 +13,7 @@
        checkout; depois, "Oferta encerrada". */
     fim: "2026-11-20T23:59:59-03:00",
 
-    valor: 747,
+    valor: 797,
 
     /* Id da regra de CLIQUE do painel PixelX (TRACKING.md §8). Preencha
        quando a regra for criada: ele vai para o botão do hero. Só pode
