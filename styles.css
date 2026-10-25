@@ -69,19 +69,18 @@ button { font: inherit; }
 .gold { color: var(--gold); }
 .mono { font-family: var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 
-/* conteúdo acima da fumaça (z 0) e abaixo das brasas (z 90) */
+/* conteúdo acima da fumaça (z 0) */
 main, .footer { position: relative; z-index: 1; }
 main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral (clip não quebra o sticky) */
 
 /* =========================================================
    ATMOSFERA — canvases fixos (ver script.js)
    ========================================================= */
-.fx-fumaca, .fx-brasas {
+.fx-fumaca {
   position: fixed; inset: 0; width: 100%; height: 100%;
   pointer-events: none; mix-blend-mode: screen;
 }
 .fx-fumaca { z-index: 0; opacity: .9; filter: blur(6px); }
-.fx-brasas { z-index: 90; }
 
 /* =========================================================
    TIPOGRAFIA DE IMPACTO
@@ -373,7 +372,7 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 /* =========================================================
    2 · O CAMINHO
    ========================================================= */
-.caminho { position: relative; height: 280vh; }
+.caminho { position: relative; height: 200vh; } /* 1 tela de rolagem para as 6 etapas */
 .caminho__palco {
   position: sticky; top: 0; height: 100svh; overflow: hidden;
   display: grid; grid-template-columns: minmax(320px, 500px) 1fr; align-items: end; column-gap: clamp(1.5rem, 4vw, 4rem);
@@ -886,7 +885,7 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
   .etapa .cta, .barra-compra .cta { width: auto; }
 
   /* caminho: mapa em cima, cartão embaixo */
-  .caminho { height: 270vh; }
+  .caminho { height: 190vh; }
   /* embaixo fica a barra fixa de compra: o cartão sobe para não ficar atrás dela */
   .caminho__palco { grid-template-columns: 1fr; align-items: end; padding: var(--topbar) var(--gutter) calc(5.2rem + env(safe-area-inset-bottom)); }
   .caminho__progresso { margin-top: .8rem; }
@@ -937,7 +936,7 @@ main { overflow-x: clip; } /* faixa inclinada e mural não criam rolagem lateral
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
-  .fx-fumaca, .fx-brasas, .hero__rugido, .hero__olho, .hero__fumaca, .fogo { display: none; }
+  .fx-fumaca, .hero__rugido, .hero__olho, .hero__fumaca, .fogo { display: none; }
   .hero__anim, [data-reveal], [data-ficha] li { opacity: 1; transform: none; filter: none; }
   .faixa__trilho, .mural__faixa, .bilhetes__faixa { animation: none; }
   .mural, .bilhetes { overflow-x: auto; }

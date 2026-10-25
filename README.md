@@ -32,7 +32,7 @@ Estática, sem build: `index.html` + `styles.css` + `script.js` + `assets/`.
 ## Seções
 
 1. **Hero**: o leão recortado da arte, logo antes do título original, com a borda direita estendida e esmaecida (`assets/hero-leao.webp`, versão de celular `hero-leao-560.webp`). O "ATÉ A FARDA" é texto vivo em metal. Em telas mais estreitas o leão desliza para a esquerda e o rosto nunca fica embaixo do texto.
-2. **O caminho + a plataforma**: uma trilha lateral, da esquerda para a direita, guiada pela rolagem, em 6 etapas: Você → CPPEM → Missão diária → Evolução → Mentoria → Farda. Em cada trecho, a tela "Seu equipamento de trilha" mostra a ferramenta da plataforma que leva a pessoa até ali (dispositivos e IA, cronograma, rendimento, mentoria ao vivo). No celular, o print vai dentro do cartão da etapa. A farda fica **parada no horizonte, sempre à frente**. O viajante para em 86% da rota e o resto vira um fluxo de luz. Na última etapa, uma mira corre até a farda e trava ("Alvo travado").
+2. **O caminho + a plataforma**: uma trilha lateral, da esquerda para a direita, guiada pela rolagem (cerca de 1 tela de rolagem para as 6 etapas), em 6 etapas: Você → CPPEM → Missão diária → Evolução → Mentoria → Farda. Em cada trecho, a tela "Seu equipamento de trilha" mostra a ferramenta da plataforma que leva a pessoa até ali (dispositivos e IA, cronograma, rendimento, mentoria ao vivo). No celular, o print vai dentro do cartão da etapa. A farda fica **parada no horizonte, sempre à frente**. O viajante para em 86% da rota e o resto vira um fluxo de luz. Na última etapa, uma mira corre até a farda e trava ("Alvo travado").
 3. **Faixa dourada** e **mentorias**: Everton, MDT, as tags TAF/psicotécnico/grupo e os extras digitais.
 4. **Bônus** (1º, 10 e 30 primeiros), em texto, sem contador.
 5. **Oferta**: ficha com os 13 itens entrando um a um, o preço, fogo atrás do botão e o selo de 7 dias.
@@ -41,7 +41,7 @@ Estática, sem build: `index.html` + `styles.css` + `script.js` + `assets/`.
 8. **Barra do topo**: vermelha e pulsando, com a tag "Oferta exclusiva" e o relógio até 20/11.
 9. **Exit popup** (kit do comboPCPE2, tema ouro): "Ficou alguma dúvida?". Grava nome, e-mail e WhatsApp na planilha e abre o WhatsApp da equipe com a mensagem pronta. Dispara ao tirar o mouse da página (desktop) ou com inatividade ou um arremesso de volta ao topo (celular), uma vez por sessão e com 3 dias de silêncio depois de fechar. Não aparece para quem já clicou no checkout. Não conta como Lead de venda.
 
-**Atmosfera**: a fumaça (`#fumaca`) é um canvas em meia resolução que reage à rolagem. As brasas (`#brasas`) usam o mesmo motor da captura. As duas ficam mais fortes perto dos bônus, da oferta e do fecho. Tudo desliga com `prefers-reduced-motion`.
+**Atmosfera**: a fumaça (`#fumaca`) é um canvas em meia resolução que reage à rolagem e fica mais forte perto dos bônus, da oferta e do fecho. Desliga com `prefers-reduced-motion`.
 
 ## Medição
 

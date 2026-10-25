@@ -421,7 +421,7 @@
   })();
 
   /* =========================================================
-     ATMOSFERA — fumaça e brasas em canvas
+     ATMOSFERA — fumaça em canvas
      ========================================================= */
   if (reduced) return;
 
@@ -447,17 +447,8 @@
     }
   });
 
-  var SPRITE_BRASA = sprite(32, function (g, s) {
-    var gr = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
-    gr.addColorStop(0, "rgba(255,240,200,1)");
-    gr.addColorStop(.25, "rgba(255,170,70,.9)");
-    gr.addColorStop(.6, "rgba(255,90,20,.25)");
-    gr.addColorStop(1, "rgba(255,60,0,0)");
-    g.fillStyle = gr; g.fillRect(0, 0, s, s);
-  });
-
   var estreita = window.innerWidth < 760;
-  var intensidade = 1; // sobe perto da oferta e do fecho: "fogo"
+  var intensidade = 1; // a fumaça engrossa perto dos bônus, da oferta e do fecho
 
   (function fogoPerto() {
     if (!("IntersectionObserver" in window)) return;
@@ -511,51 +502,6 @@
       if (!document.hidden) requestAnimationFrame(passo); else ativo = false;
     }
     function ligar() { if (ativo) return; ativo = true; ultimo = performance.now(); requestAnimationFrame(passo); }
-    ligar();
-    window.addEventListener("resize", medir);
-    document.addEventListener("visibilitychange", function () { if (!document.hidden) ligar(); });
-  })();
-
-  /* ---------- brasas subindo pela página (mesmo motor da captura) ---------- */
-  (function brasas() {
-    var cv = $("#brasas");
-    if (!cv) return;
-    var ctx = cv.getContext("2d"), W, H, base, lista = [], ultimo = 0, ativo = false;
-    function medir() {
-      W = window.innerWidth; H = window.innerHeight;
-      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      base = W < 760 ? 12 : 26;
-    }
-    function nova(espalhada) {
-      return { x: Math.random() * W, y: espalhada ? Math.random() * H : H + 12,
-        vx: rand(-5, 5), vy: -rand(18, 48), r: rand(.9, 2.3), vida: 0, max: rand(6, 13), fase: Math.random() * 6.28 };
-    }
-    function passo(ts) {
-      var dt = Math.min((ts - ultimo) / 1000, .05), t = ts / 1000; ultimo = ts;
-      var alvo = Math.round(base * intensidade);
-      if (lista.length < alvo && Math.random() < .5) lista.push(nova(false));
-      ctx.clearRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "lighter";
-      for (var i = lista.length - 1; i >= 0; i--) {
-        var q = lista[i];
-        q.vida += dt;
-        q.x += (q.vx + Math.sin(t * 1.3 + q.fase) * 14) * dt;
-        q.y += q.vy * dt * (intensidade > 1 ? 1.3 : 1);
-        if (q.vida >= q.max || q.y < -20 || (lista.length > alvo && q.vida > q.max * .5)) { lista.splice(i, 1); continue; }
-        var k = q.vida / q.max;
-        ctx.globalAlpha = Math.max(0, Math.sin(k * Math.PI) * (.5 + .3 * Math.sin(t * 7 + q.fase * 3)));
-        var rb = q.r * 5;
-        ctx.drawImage(SPRITE_BRASA, q.x - rb, q.y - rb, rb * 2, rb * 2);
-      }
-      ctx.globalAlpha = 1;
-      ctx.globalCompositeOperation = "source-over";
-      if (!document.hidden) requestAnimationFrame(passo); else ativo = false;
-    }
-    function ligar() { if (ativo) return; ativo = true; ultimo = performance.now(); requestAnimationFrame(passo); }
-    medir();
-    for (var i = 0; i < base; i++) lista.push(nova(true));
     ligar();
     window.addEventListener("resize", medir);
     document.addEventListener("visibilitychange", function () { if (!document.hidden) ligar(); });
