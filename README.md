@@ -34,7 +34,7 @@ Estática, sem build: `index.html` + `styles.css` + `script.js` + `assets/`.
 1. **Hero**: o leão recortado da arte, logo antes do título original, com a borda direita estendida e esmaecida (`assets/hero-leao.webp`, versão de celular `hero-leao-560.webp`). O "ATÉ A FARDA" é texto vivo em metal. Em telas mais estreitas o leão desliza para a esquerda e o rosto nunca fica embaixo do texto.
 2. **O caminho + a plataforma**: uma trilha lateral, da esquerda para a direita, guiada pela rolagem (cerca de 1 tela de rolagem para as 6 etapas), em 6 etapas: Você → CPPEM → Missão diária → Evolução → Mentoria → Farda. Em cada trecho, a tela "Seu equipamento de trilha" mostra a ferramenta da plataforma que leva a pessoa até ali (dispositivos e IA, cronograma, rendimento, mentoria ao vivo). No celular, o print vai dentro do cartão da etapa. A farda fica **parada no horizonte, sempre à frente**. O viajante para em 86% da rota e o resto vira um fluxo de luz. Na última etapa, uma mira corre até a farda e trava ("Alvo travado").
 3. **Faixa dourada** e **mentorias**: Everton, MDT, as tags TAF/psicotécnico/grupo e os extras digitais.
-4. **Bônus** (1º, 10 e 30 primeiros), em texto, sem contador.
+4. **Bônus** (1º e 10 primeiros), em texto, sem contador.
 5. **Oferta**: ficha com os 13 itens entrando um a um, o preço, fogo atrás do botão e o selo de 7 dias.
 6. **Prova social**: números, mural de fotos de farda e faixa de bilhetes com comentários.
 7. **FAQ**, fecho e footer. No celular há uma barra fixa de compra depois do hero.
