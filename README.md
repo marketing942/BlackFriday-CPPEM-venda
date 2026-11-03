@@ -6,7 +6,7 @@ Página de venda da Black Friday da CPPEM, com checkout direto em
 
 | | |
 |---|---|
-| **Oferta** | de ~~R$ 6.739,40~~ por **R$ 797 à vista** ou **12x de R$ 83,15** (total parcelado R$ 997,80) |
+| **Oferta** | de ~~R$ 6.739,40~~ por **R$ 797 à vista** ou **12x de R$ 83,15** |
 | **Janela** | botões ativos até 20/11, 23h59 (horário de Brasília) |
 | **Prazos** | acesso à plataforma até a aprovação; mentoria ao vivo semanal por 1 ano |
 | **Garantia** | 7 dias |
