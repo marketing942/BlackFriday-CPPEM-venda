@@ -117,6 +117,11 @@
     faseAtual = f;
     document.documentElement.dataset.fase = f;
     var txt = f === "aberta" ? "A oferta encerra em" : "Operação encerrada";
+    $$(".enc-banner, .enc-wa").forEach(function (el) { el.hidden = f === "aberta"; });
+    if (f === "encerrada") {
+      document.title = "Oferta encerrada · Operação Black CPPEM";
+      track("oferta_encerrada_exibida", {});
+    }
     $$("[data-fase-txt]").forEach(function (el) { el.textContent = txt; });
 
     ctas.forEach(function (b) {
@@ -128,10 +133,14 @@
       } else {
         b.setAttribute("aria-disabled", "true");
         if (l) l.textContent = "Oferta encerrada";
-        if (s) s.textContent = "A Operação Black terminou em 20/11";
+        if (s) s.textContent = "Fale com a equipe no WhatsApp";
       }
     });
   }
+
+  $$("[data-wa-encerrada]").forEach(function (a) {
+    a.addEventListener("click", function () { track("whatsapp_encerrada", { local: a.className }); });
+  });
 
   var relogios = $$("[data-relogio]");
   function dois(n) { return (n < 10 ? "0" : "") + n; }
@@ -161,6 +170,8 @@
       e.preventDefault();
       if (faseAtual !== "aberta") {
         track("cta_travado", { fase: faseAtual, cta: btn.dataset.cta });
+        var wa = $("[data-wa-encerrada]");
+        if (wa) window.open(wa.href, "_blank", "noopener");
         return;
       }
       if (indo) return;
