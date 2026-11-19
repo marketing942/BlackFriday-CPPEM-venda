@@ -11,7 +11,7 @@
 
     /* Fim da oferta (horário de Brasília). Até lá os botões levam ao
        checkout; depois, "Oferta encerrada". */
-    fim: "2026-11-20T23:59:59-03:00",
+    fim: "2026-11-19T23:59:59-03:00",
 
     valor: 797,
 
